@@ -193,10 +193,10 @@ class _WebOverlayBottomControlles extends StatelessWidget {
       } else {
         if (kIsWeb) {
           _html.document.documentElement?.requestFullscreen();
-          _podCtr.enableFullScreen(tag);
+          _podCtr.enableFullScreen(context, tag);
           return;
         } else {
-          _podCtr.enableFullScreen(tag);
+          _podCtr.enableFullScreen(context, tag);
         }
       }
     } else {

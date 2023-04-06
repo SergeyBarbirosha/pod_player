@@ -240,7 +240,7 @@ class _MobileOverlayBottomControlles extends StatelessWidget {
                     if (_podCtr.isFullScreen) {
                       _podCtr.disableFullScreen(context, tag);
                     } else {
-                      _podCtr.enableFullScreen(tag);
+                      _podCtr.enableFullScreen(context, tag);
                     }
                   } else {
                     _podCtr.toggleVideoOverlay();
