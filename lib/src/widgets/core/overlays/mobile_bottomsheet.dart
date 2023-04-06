@@ -21,10 +21,11 @@ class _MobileBottomSheet extends StatelessWidget {
               icon: Icons.video_settings_rounded,
               subText: '${_podCtr.vimeoPlayingVideoQuality}p',
               onTap: () {
-                Navigator.of(context).pop();
+                Navigator.of(context, rootNavigator: true).pop();
                 Timer(const Duration(milliseconds: 100), () {
                   showModalBottomSheet(
                     context: context,
+                    useRootNavigator: true,
                     builder: (context) => SafeArea(
                       child: _VideoQualitySelectorMob(
                         tag: tag,
@@ -45,7 +46,7 @@ class _MobileBottomSheet extends StatelessWidget {
                 ? _podCtr.podPlayerLabels.optionEnabled
                 : _podCtr.podPlayerLabels.optionDisabled,
             onTap: () {
-              Navigator.of(context).pop();
+              Navigator.of(context, rootNavigator: true).pop();
               _podCtr.toggleLooping();
             },
           ),
@@ -54,10 +55,11 @@ class _MobileBottomSheet extends StatelessWidget {
             icon: Icons.slow_motion_video_rounded,
             subText: _podCtr.currentPaybackSpeed,
             onTap: () {
-              Navigator.of(context).pop();
+              Navigator.of(context, rootNavigator: true).pop();
               Timer(const Duration(milliseconds: 100), () {
                 showModalBottomSheet(
                   context: context,
+                  useRootNavigator: true,
                   isScrollControlled: true,
                   builder: (context) => SafeArea(
                     child: _VideoPlaybackSelectorMob(
@@ -137,7 +139,7 @@ class _VideoQualitySelectorMob extends StatelessWidget {
               (e) => ListTile(
                 title: Text('${e.quality}p'),
                 onTap: () {
-                  onTap != null ? onTap!() : Navigator.of(context).pop();
+                  onTap != null ? onTap!() : Navigator.of(context, rootNavigator: true).pop();
 
                   _podCtr.changeVideoQuality(e.quality);
                 },
@@ -170,7 +172,7 @@ class _VideoPlaybackSelectorMob extends StatelessWidget {
               (e) => ListTile(
                 title: Text(e),
                 onTap: () {
-                  onTap != null ? onTap!() : Navigator.of(context).pop();
+                  onTap != null ? onTap!() : Navigator.of(context,rootNavigator: true).pop();
                   _podCtr.setVideoPlayBack(e);
                 },
               ),

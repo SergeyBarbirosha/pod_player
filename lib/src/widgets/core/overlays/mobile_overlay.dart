@@ -118,6 +118,7 @@ class _MobileOverlay extends StatelessWidget {
   void _bottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
       builder: (context) => SafeArea(child: _MobileBottomSheet(tag: tag)),
     );
   }
